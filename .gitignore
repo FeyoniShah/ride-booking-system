@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Large files
+data/
+*.csv
+
+# Model files (optional)
+model/*.pkl
