@@ -514,21 +514,21 @@ with tab3:
         else:
             st.info("👈 Fill in the ride parameters and click **Predict** to see the cancellation risk.")
 
-    # --- FEATURE IMPORTANCE ---
-    st.markdown("---")
-    st.markdown('<p class="section-header">Feature Importance (Model Explanation)</p>', unsafe_allow_html=True)
+    # # --- FEATURE IMPORTANCE ---
+    # st.markdown("---")
+    # st.markdown('<p class="section-header">Feature Importance (Model Explanation)</p>', unsafe_allow_html=True)
 
-    feature_names = ['Hour', 'Vehicle Type', 'Pickup Location', 'Drop Location',
-                     'Ride Distance', 'Avg VTAT', 'Avg CTAT']
-    importances   = model.feature_importances_
-    fi_df = pd.DataFrame({'Feature': feature_names, 'Importance': importances})
-    fi_df = fi_df.sort_values('Importance', ascending=True)
+    # feature_names = ['Hour', 'Vehicle Type', 'Pickup Location', 'Drop Location',
+    #                  'Ride Distance', 'Avg VTAT', 'Avg CTAT']
+    # importances   = model.feature_importances_
+    # fi_df = pd.DataFrame({'Feature': feature_names, 'Importance': importances})
+    # fi_df = fi_df.sort_values('Importance', ascending=True)
 
-    fig = px.bar(fi_df, x='Importance', y='Feature', orientation='h',
-                 color='Importance', color_continuous_scale='Viridis',
-                 labels={'Importance': 'Relative Importance'})
-    fig.update_layout(coloraxis_showscale=False, **PLOT_THEME)
-    st.plotly_chart(fig, use_container_width=True)
+    # fig = px.bar(fi_df, x='Importance', y='Feature', orientation='h',
+    #              color='Importance', color_continuous_scale='Viridis',
+    #              labels={'Importance': 'Relative Importance'})
+    # fig.update_layout(coloraxis_showscale=False, **PLOT_THEME)
+    # st.plotly_chart(fig, use_container_width=True)
 
-    st.caption("Feature importance is derived from the trained Random Forest model. "
-               "Higher values indicate features that contribute more to predicting cancellations.")
+    # st.caption("Feature importance is derived from the trained Random Forest model. "
+    #            "Higher values indicate features that contribute more to predicting cancellations.")
